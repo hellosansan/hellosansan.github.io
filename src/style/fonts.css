@@ -1,0 +1,287 @@
+/***************************************
+中文字体
+***************************************/
+
+/*******************
+ZhSerif
+*******************/
+
+@font-face {
+    font-family: ZhSerif;
+    src: url("fonts/FZShusong.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhSerif;
+    src: url("fonts/FZFangsong.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhSerif;
+    src: url("fonts/FZHeiti.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhSerif;
+    src: url("fonts/FZHeiti.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+/*******************
+ZhTitleSerif
+*******************/
+
+@font-face {
+    font-family: ZhTitleSerif;
+    src: url("fonts/FZXiaobiaosong.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhTitleSerif;
+    src: url("fonts/FZXiaobiaosong.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhTitleSerif;
+    src: url("fonts/FZXihei.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhTitleSerif;
+    src: url("fonts/FZXihei.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+/*******************
+ZhSans
+*******************/
+
+@font-face {
+    font-family: ZhSans;
+    src: url("fonts/FZKaiti.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhSans;
+    src: url("fonts/FZFangsong.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhSans;
+    src: url("fonts/FZHeiti.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: ZhSans;
+    src: url("fonts/FZHeiti.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+/***************************************
+英文字体
+***************************************/
+
+/*******************
+IBMPlexSerif
+*******************/
+
+@font-face {
+    font-family: IBMPlexSerif;
+    src: url("fonts/IBMPlexSerif.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexSerif;
+    src: url("fonts/IBMPlexSerifItalic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexSerif;
+    src: url("fonts/IBMPlexSerifBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexSerif;
+    src: url("fonts/IBMPlexSerifBoldItalic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+/*******************
+IBMPlexTitleSerif
+*******************/
+
+@font-face {
+    font-family: IBMPlexTitleSerif;
+    src: url("fonts/IBMPlexSerifLight.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexTitleSerif;
+    src: url("fonts/IBMPlexSerifLightItalic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexTitleSerif;
+    src: url("fonts/IBMPlexSerif.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexTitleSerif;
+    src: url("fonts/IBMPlexSerifItalic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+/*******************
+IBMPlexSans
+*******************/
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url("fonts/IBMPlexSans.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url("fonts/IBMPlexSansItalic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url("fonts/IBMPlexSansBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    src: url("fonts/IBMPlexSansBoldItalic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+/*******************
+IBMPlexMono
+*******************/
+
+@font-face {
+    font-family: IBMPlexMono;
+    src: url("fonts/IBMPlexMono.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexMono;
+    src: url("fonts/IBMPlexMonoItalic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexMono;
+    src: url("fonts/IBMPlexMonoBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: IBMPlexMono;
+    src: url("fonts/IBMPlexMonoBoldItalic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    unicode-range: U+0000-2E7F, U+3040-FEFF, U+FFF0-FFFF;
+}

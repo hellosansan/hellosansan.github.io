@@ -10,11 +10,13 @@ import { SITE_TITLE } from "../config";
 const postImports = import.meta.glob("../posts/*.md");
 const posts = (
   await Promise.all(Object.values(postImports).map((p) => p()))
-).sort(
-  (a, b) =>
-    new Date(b.frontmatter.updated || b.frontmatter.added).valueOf() -
-    new Date(a.frontmatter.updated || a.frontmatter.added).valueOf(),
-);
+)
+  .filter((p) => !p.frontmatter.hidden)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.updated || b.frontmatter.added).valueOf() -
+      new Date(a.frontmatter.updated || a.frontmatter.added).valueOf(),
+  );
 ---
 
 <!doctype html>

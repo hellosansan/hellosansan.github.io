@@ -7,7 +7,9 @@ import HomePosts from "../components/HomePosts.astro";
 import { SITE_TITLE } from "../config";
 
 const postImports = import.meta.glob("../posts/*.md");
-const posts = await Promise.all(Object.values(postImports).map((p) => p()));
+const posts = (await Promise.all(Object.values(postImports).map((p) => p()))).filter(
+  (p) => !p.frontmatter.hidden,
+);
 ---
 
 <!doctype html>

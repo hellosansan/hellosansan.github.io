@@ -388,7 +388,15 @@ export default function markdownReplace() {
 
       node.children = regex(node, /(『\s*|\s*』)/g, '<span style="display: none;">$1</span>');
 
-      node.children = regex(node, /—(——.*)/g, '<p style="text-align: right; padding: 0 2px 0 0">$1</p>');
+      node.children = regex(node, /—(——.*)/g, '<p style="text-align: right; text-indent: 0; padding: 0 2px 0 0;">$1</p>');
+
+      node.children = regex(node, /^\.Right{(.*)}/g, ' <p style="text-align: right;  text-indent: 0;">$1</p>');
+      node.children = regex(node, /^\.Center{(.*)}/g, '<p style="text-align: center; text-indent: 0;">$1</p>');
+      node.children = regex(node, /^\.Left{(.*)}/g, '  <p style="text-align: left;   text-indent: 0;">$1</p>');
+
+      node.children = regex(node, /^\.right{(.*)}/g, ' <p style="font-style: italic; text-align: right;  text-indent: 0;">$1</p>');
+      node.children = regex(node, /^\.center{(.*)}/g, '<p style="font-style: italic; text-align: center; text-indent: 0;">$1</p>');
+      node.children = regex(node, /^\.left{(.*)}/g, '  <p style="font-style: italic; text-align: left;   text-indent: 0;">$1</p>');
     });
 
     // Add footnotes section at the end if we have any footnotes

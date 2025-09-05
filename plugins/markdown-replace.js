@@ -399,6 +399,29 @@ export default function markdownReplace() {
       node.children = regex(node, /^\.left{(.*)}/g, '  <p style="font-style: italic; text-align: left;   text-indent: 0;">$1</p>');
     });
 
+    // 在正文末尾追加字符
+    if (tree.children.length > 0) {
+      // 从后往前寻找最后一个段落节点
+      let lastParagraph = null;
+      for (let i = tree.children.length - 1; i >= 0; i--) {
+        const node = tree.children[i];
+        if (node.type === 'paragraph' && node.children && node.children.length > 0) {
+          lastParagraph = node;
+          break;
+        }
+      }
+
+      if (lastParagraph) {
+        // 获取段落的最后一个子节点（通常是 text 或 html 节点）
+        const lastNodeInParagraph = lastParagraph.children[lastParagraph.children.length - 1];
+
+        // 确保该节点有 value 属性可以修改
+        if (lastNodeInParagraph && (lastNodeInParagraph.type === 'text' || lastNodeInParagraph.type === 'html') && typeof lastNodeInParagraph.value === 'string') {
+          lastNodeInParagraph.value += '¶';
+        }
+      }
+    }
+
     // Add footnotes section at the end if we have any footnotes
     if (collectedFootnotes.length > 0) {
       // Add a divider

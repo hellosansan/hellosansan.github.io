@@ -1,0 +1,27 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import HomePosts from "../components/HomePosts.astro";
+import { SITE_TITLE } from "../config.js";
+
+const { content, posts, tag } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-cn">
+  <BaseHead title={`${content.title} | ${SITE_TITLE}`} />
+
+  <body>
+    <Header title={SITE_TITLE} />
+
+    <main>
+      <h2 style="margin-bottom: -0.5em;">
+        含有标签 “{tag}” 的文章
+      </h2>
+      <HomePosts allPosts={posts} />
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,37 @@
+---
+const today = new Date();
+---
+
+<footer>
+  <hr style="margin: -0.2em 0 2em 0;" />
+
+  &copy; {today.getFullYear()}
+  <!-- <a href="https://hellosansan.github.io">三三</a> -->
+  三三
+
+  <br />
+
+  所有内容采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+    CC BY-NC 4.0</a
+  > 许可协议
+
+  <div style="width: 15em; display: flex; justify-content: space-between; font-family: ZhSerif, IBMPlexSerif; font-size: 1em; margin-bottom: 2em; margin-left: auto; margin-right: auto;">
+    <a href="/">首页</a>
+    <a href="#top">顶部</a>
+    <a href="/post/同志，你好%20👋">说明</a>
+    <a href="feed://hellosansan.github.io/rss.xml">RSS</a>
+    <a href="https://github.com/hellosansan">资料</a>
+  </div>
+
+</footer>
+
+<style>
+  footer {
+    font-size: 0.8em; /* TODO: 引入太多的字体大小好吗? */
+    font-family: ZhSerif, IBMPlexSerif;
+    text-align: center;
+    line-height: calc(var(--font-size) * 1);
+
+    padding: 2em 0 0 0;
+  }
+</style>

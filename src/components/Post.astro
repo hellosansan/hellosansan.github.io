@@ -1,0 +1,42 @@
+---
+const { added, description, tags, title } = Astro.props;
+---
+
+<br />
+
+<a class="toc" href={`/post/${title}/`}>{title} </a>
+
+<time class="vice" datetime={added}>
+  {new Date(added).toISOString().slice(0, 10)}
+</time>
+
+<div  class="vice" style="font-size: 1em">
+  {description}
+</div>
+
+<div class="vice">
+  {
+    tags.map((tag: string, i: number) => (
+      <>
+        {i > 0 && " | "}
+        <a href={`/tags/${tag}`} class="tag-link">
+          {tag}
+        </a>
+      </>
+    ))
+  }
+</div>
+
+<style>
+  a.toc {
+    font-size: 1.3em;
+    font-family: ZhSerif, IBMPlexSerif;
+  }
+  .tag-link {
+    color: var(--theme-link);
+    text-decoration: none;
+  }
+  .tag-link:hover {
+    text-decoration: underline;
+  }
+</style>

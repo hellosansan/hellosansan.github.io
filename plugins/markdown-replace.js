@@ -397,6 +397,8 @@ export default function markdownReplace() {
       node.children = regex(node, /^\.right{(.*)}/g, ' <p style="font-style: italic; text-align: right;  text-indent: 0;">$1</p>');
       node.children = regex(node, /^\.center{(.*)}/g, '<p style="font-style: italic; text-align: center; text-indent: 0;">$1</p>');
       node.children = regex(node, /^\.left{(.*)}/g, '  <p style="font-style: italic; text-align: left;   text-indent: 0;">$1</p>');
+
+      node.children = regex(node, /^\.HR{(.*)}/g, '<hr style="border: 1px solid #cccccc;" />');
     });
 
     // 在正文末尾追加字符

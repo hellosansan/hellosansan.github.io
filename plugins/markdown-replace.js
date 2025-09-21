@@ -375,7 +375,7 @@ export default function markdownReplace() {
       node.children = regex(node, /「([^」]*?)」/g, '「<em>$1</em>」');
 
       // Add bold formatting for text within Chinese double quotes ""
-      node.children = regex(node, /“([^”]*?)”/g, '“<strong>$1</strong>”');
+      // node.children = regex(node, /“([^”]*?)”/g, '“<strong>$1</strong>”');
 
       // Add space between Chinese and English/numbers
       node.children = regex(node, /([\u4e00-\u9fa5])([a-zA-Z0-9])/g, '$1 $2');

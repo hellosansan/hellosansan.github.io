@@ -2,7 +2,17 @@
 import "../style/stylesheet.css";
 import { SITE_TITLE } from "../config.js";
 
-const { title } = Astro.props;
+const { title, pageType } = Astro.props;
+
+let fullTitle = `三三｜${SITE_TITLE}`;
+
+if (pageType === 'post') {
+  fullTitle = `三三｜文章：${title}`;
+} else if (pageType === 'tag') {
+    fullTitle = `三三｜标签：${title}`;
+} else if (pageType === 'home') {
+    fullTitle = '三三｜主页';
+}
 ---
 
 <head>
@@ -16,7 +26,7 @@ const { title } = Astro.props;
   <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" crossorigin="anonymous" />
 
-  <title>{title}</title>
+  <title>{fullTitle}</title>
 
-  <meta name="title" content={title} />
+  <meta name="title" content={fullTitle} />
 </head>

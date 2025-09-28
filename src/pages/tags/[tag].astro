@@ -30,7 +30,7 @@ const filteredPosts = allPosts.filter((post) => !post.frontmatter.hidden && post
 
 <!doctype html>
 <html lang="zh-cn">
-  <BaseHead title={`Tag: ${originalTag} | ${SITE_TITLE}`} />
+  <BaseHead title={originalTag} pageType="tag" />
 
   <body>
     <Header title={`Tag: ${originalTag}`} />

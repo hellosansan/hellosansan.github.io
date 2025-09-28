@@ -14,7 +14,7 @@ const posts = (await Promise.all(Object.values(postImports).map((p) => p()))).fi
 
 <!doctype html>
 <html lang="zh-cn">
-  <BaseHead title={SITE_TITLE} />
+  <BaseHead title={SITE_TITLE} pageType="home" />
 
   <body>
     <Header title={SITE_TITLE} />

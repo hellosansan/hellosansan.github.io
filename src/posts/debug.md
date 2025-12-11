@@ -1,5 +1,5 @@
 ---
-title: 样式测试
+title: debug
 added: 2025-05-11
 description: 对敏捷、精益和DevOps等软件开发方法论的深入分析与比较
 tags:

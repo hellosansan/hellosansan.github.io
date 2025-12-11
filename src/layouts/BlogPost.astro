@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import { slugify } from "../utils/slugify";
-
 let {
   content: { title, added, updated, tags, description },
 } = Astro.props;
@@ -27,6 +26,7 @@ if (updated) {
       </div>
 
       <div class="vice" style="text-align: center; margin: 0.6em auto 0 auto">
+      
         {
           tags.map((tag: string, i: number) => (
             <span>
@@ -34,6 +34,7 @@ if (updated) {
               <a href={`/tag/${slugify(tag)}`} style="color: inherit; text-decoration: none;">
                 {tag}
               </a>
+  
             </span>
           ))
         }
@@ -42,7 +43,7 @@ if (updated) {
       <div class="vice" style="text-align: center">
         {
           updated && updated !== added ?
-(
+          (
             <span>
               <time>{added}</time> (<time>{updated}</time>)
             </span>
@@ -63,18 +64,45 @@ if (updated) {
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const paragraphs = document.querySelectorAll("p");
-    let epigraphCounter = 0;
-    paragraphs.forEach((p) => {
-      const trimmedText = p.textContent.trim();
-      if (trimmedText.startsWith("『") && trimmedText.endsWith("』")) {
-        p.classList.add("epigraph");
-        if (epigraphCounter % 2 === 0) {
-          p.classList.add("float-left");
-        } else {
-          p.classList.add("float-right");
+    // 同时选择段落（可能是格言）和图片容器（.image-wrap）
+    // 这里的 querySelectorAll 会按照它们在 HTML 中出现的顺序返回列表
+    const candidates = document.querySelectorAll("p, .image-wrap");
+    
+    // 统一计数器：无论是格言还是图片，都共用这个计数器来决定左右
+    let floatCounter = 0;
+
+    candidates.forEach((el) => {
+      let isFloatingElement = false;
+
+      // 逻辑 1: 检查是否为格言 (Epigraph)
+      // 只有当元素是 P 标签且包含『』时才判定为格言
+      if (el.tagName === "P") {
+        const trimmedText = el.textContent.trim();
+        if (trimmedText.startsWith("『") && trimmedText.endsWith("』")) {
+          el.classList.add("epigraph");
+          isFloatingElement = true;
         }
-        epigraphCounter++;
+      }
+      
+      // 逻辑 2: 检查是否为图片容器 (Image Wrap)
+      // 假设你的 markdown 插件生成的图片容器带有 .image-wrap 类
+      else if (el.classList.contains("image-wrap")) {
+        isFloatingElement = true;
+        // 移除可能由服务端/插件预设的浮动类，确保完全由这里控制交替逻辑
+        el.classList.remove("float-left", "float-right");
+      }
+
+      // 统一应用左右交替规则
+      if (isFloatingElement) {
+        if (floatCounter % 2 === 0) {
+          // 偶数：左浮动
+          el.classList.add("float-left");
+        } else {
+          // 奇数：右浮动
+          el.classList.add("float-right");
+        }
+        // 只有确认为悬挂元素时，计数器才增加
+        floatCounter++;
       }
     });
   });

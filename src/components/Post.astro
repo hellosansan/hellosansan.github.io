@@ -1,10 +1,11 @@
 ---
+import { slugify } from "../utils/slugify";
 const { added, description, tags, title } = Astro.props;
 ---
 
 <br />
 
-<a class="toc" href={`/post/${title}/`}>{title} </a>
+<a class="toc" href={`/post/${slugify(title)}/`}>{title} </a>
 
 <time class="vice" datetime={added}>
   {new Date(added).toISOString().slice(0, 10)}
@@ -19,7 +20,7 @@ const { added, description, tags, title } = Astro.props;
     tags.map((tag: string, i: number) => (
       <>
         {i > 0 && " | "}
-        <a href={`/tags/${tag}`} class="tag-link">
+        <a href={`/tag/${slugify(tag)}`} class="tag-link">
           {tag}
         </a>
       </>

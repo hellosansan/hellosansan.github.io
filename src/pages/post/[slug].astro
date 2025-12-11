@@ -1,14 +1,16 @@
 ---
 import BlogPost from "../../layouts/BlogPost.astro";
+import { slugify } from "../../utils/slugify";
 
 // Credit to @rachsmithcodes for this function
 export async function getStaticPaths() {
   const postImports = import.meta.glob(`../../posts/*.md`);
-  let posts = await Promise.all(Object.values(postImports).map((p) => p()));
+  let posts = await Promise.all(Object.values(postImports).map((p: any) => p()));
 
   return posts.map((post) => {
     return {
-      params: { title: post.frontmatter.title },
+      // 使用 slugify 将标题转换为拼音作为 URL 参数
+      params: { slug: slugify(post.frontmatter.title) },
       props: { post: post },
     };
   });
